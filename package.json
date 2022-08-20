@@ -1,0 +1,28 @@
+{
+  "name": "learn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node config/build/esbuild-dev.ts",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "cross-env MODE=prod ts-node config/build/esbuild-prod.ts",
+    "build:server": "cross-env MODE=prod ts-node config/build/esbuild-server.ts",
+    "start": "node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.14.48",
+    "ts-node": "^10.8.2",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
